@@ -35,4 +35,4 @@ jobs:
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: MAVEN_OPTS="-Xmx4g" mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=pth_hive -Dsonar.organization=pth -DskipTests -Drat.skip=true -Dsonar.inclusions=**/*.java
+        run: export MAVEN_OPTS="-Xmx4g"; mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=pth_hive -Dsonar.organization=pth -DskipTests -Drat.skip=true -Dsonar.inclusions=**/*.java
